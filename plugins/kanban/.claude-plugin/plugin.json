@@ -1,0 +1,18 @@
+{
+  "name": "kanban",
+  "description": "BestFunc Kanban 任务管理系统 MCP 接入：远程 MCP（85+ 工具）+ 本地文件传输 MCP。",
+  "version": "1.0.0",
+  "mcpServers": {
+    "kanban": {
+      "type": "http",
+      "url": "https://task.bestfunc.com/api/mcp"
+    },
+    "kanban-files": {
+      "command": "npx",
+      "args": ["-y", "@bestfunc-com/kanban-file-mcp@latest"],
+      "env": {
+        "KANBAN_ENDPOINT": "https://task.bestfunc.com"
+      }
+    }
+  }
+}
