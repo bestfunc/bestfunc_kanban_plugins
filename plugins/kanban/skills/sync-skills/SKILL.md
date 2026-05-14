@@ -3,7 +3,7 @@ name: sync-skills
 display_name: 同步 Skills
 description: 从 BestFunc Kanban 系统同步 AI Skills 到本地，保持本地 AI 环境与系统一致
 user-invocable: true
-allowed-tools: mcp__kanban__*
+allowed-tools: Bash, Write, mcp__plugin_kanban_kanban__export_skills
 ---
 
 # 同步 Skills
@@ -18,14 +18,8 @@ allowed-tools: mcp__kanban__*
 
 1. **获取 Skills 列表**
 
-   调用 Kanban API 获取所有活跃的全局 Skills：
+   调用 MCP 工具 `export_skills`（无参数），返回所有活跃全局 Skills：
 
-   ```
-   GET https://task.bestfunc.com/api/open/skills/export
-   Authorization: Bearer <当前 MCP token>
-   ```
-
-   响应格式：
    ```json
    {
      "skills": [
@@ -55,4 +49,4 @@ allowed-tools: mcp__kanban__*
 
 - 同步是全量覆盖，本地修改会被远端覆盖
 - 仅同步全局 skills（scope=global 或 both），项目级 skills 不同步
-- 需要有效的 MCP 认证（OAuth 或 API Key）
+- 认证通过 MCP OAuth 自动完成，无需额外配置

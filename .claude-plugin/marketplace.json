@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "BestFunc Kanban 任务管理系统的 Claude Code plugin 市场。提供远程 MCP（85+ 工具）+ 本地文件传输 MCP，安装后自动连接 task.bestfunc.com。",
-    "version": "1.0.2"
+    "version": "1.0.3"
   },
   "plugins": [
     {
