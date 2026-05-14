@@ -34,12 +34,14 @@ allowed-tools: Bash, Write, mcp__plugin_kanban_kanban__export_skills
    }
    ```
 
-2. **写入本地目录**
+2. **写入插件 skills 目录**
 
-   将每个 skill 的 `content` 写入到本地 skills 目录：
+   本 skill 运行时，系统会提供 `Base directory for this skill: <path>` 上下文。
+   将 `<path>` 向上一级即为插件的 `skills/` 目录（例如 `<path>` 是 `.../skills/sync-skills`，则目标为 `.../skills/`）。
 
-   - Claude Code: `~/.claude/skills/{slug}/SKILL.md`
+   将每个 skill 的 `content` 写入到：`{skills目录}/{slug}/SKILL.md`
    - 如果目录不存在，创建它
+   - **禁止**写入 `~/.claude/skills/`（那是全局公共目录，不属于本插件）
 
 3. **报告结果**
 
@@ -48,5 +50,6 @@ allowed-tools: Bash, Write, mcp__plugin_kanban_kanban__export_skills
 ## 注意事项
 
 - 同步是全量覆盖，本地修改会被远端覆盖
-- 仅同步全局 skills（scope=global 或 both），项目级 skills 不同步
+- 同步所有系统内置 skills（包括 global、project、both 三种 scope）
 - 认证通过 MCP OAuth 自动完成，无需额外配置
+- 不要把 sync-skills 和 kanban-guide 这两个插件自带的 skill 覆盖掉
