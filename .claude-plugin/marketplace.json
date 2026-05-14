@@ -1,0 +1,18 @@
+{
+  "name": "bestfunc-kanban-plugins",
+  "owner": {
+    "name": "Bestfunc Technology",
+    "email": "Great@bestfunc.com"
+  },
+  "metadata": {
+    "description": "BestFunc Kanban 任务管理系统的 Claude Code plugin 市场。提供远程 MCP（85+ 工具）+ 本地文件传输 MCP，安装后自动连接 task.bestfunc.com。",
+    "version": "1.0.1"
+  },
+  "plugins": [
+    {
+      "name": "kanban",
+      "source": "./plugins/kanban",
+      "description": "BestFunc Kanban — 远程 MCP（85+ 任务管理工具）+ 本地文件传输 MCP + AI Skills。OAuth 自动授权，安装即用。"
+    }
+  ]
+}
