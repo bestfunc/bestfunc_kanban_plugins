@@ -1,23 +1,46 @@
 # BestFunc Kanban Plugins
 
-BestFunc Kanban 任务管理系统的 AI 客户端插件包。
+BestFunc Kanban 任务管理系统的 AI 客户端插件包，支持 Claude Code / Qwen Code 等 CLI。
+
+一条命令接入 **85+ MCP 工具 + 文件传输 + AI Skills**，覆盖任务管理、项目报告、排期编排、会议纪要、邮件通知等场景。MCP 认证走 OAuth 2.1，首次使用自动弹出浏览器授权页，无需手动配 token。
 
 ## 安装
 
 ### Claude Code
 
 ```bash
-# 方式一：从 GitHub 安装
+# 从 GitHub 安装
 /plugin marketplace add bestfunc/bestfunc_kanban_plugins
 /plugin install kanban@kanban-plugins
 
-# 方式二：本地安装
-/plugin install /path/to/bestfunc_kanban_plugins/plugins/kanban
+# 查看 MCP 连接状态
+/mcp
+
+# 首次触发 OAuth 授权
+/mcp auth kanban
 ```
 
-### 手动配置
+### Qwen Code（自动转换格式）
 
-在 `~/.claude/settings.json` 中添加 MCP 服务器：
+```bash
+# 安装扩展
+qwen extensions install bestfunc/bestfunc_kanban_plugins:kanban
+
+# 重启 Qwen Code 让 MCP 配置生效
+qwen
+
+# 查看 MCP 连接状态
+/mcp
+
+# 触发 OAuth 授权
+/mcp auth kanban
+```
+
+Qwen Code 会自动把 Claude plugin 格式转成 Qwen extensions 格式并写入 `~/.qwen/extensions/<name>/qwen-extension.json`。
+
+### 其他支持 MCP 的客户端（Cursor / Zed / Cline 等）
+
+本仓库 skill 是纯 Markdown，按客户端各自的规范复制到对应目录即可；MCP connector 单独按客户端 UI 手动配：
 
 ```json
 {

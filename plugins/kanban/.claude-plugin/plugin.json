@@ -1,7 +1,7 @@
 {
   "name": "kanban",
-  "description": "BestFunc Kanban 任务管理系统 MCP 接入：远程 MCP（85+ 工具）+ 本地文件传输 MCP。安装后自动连接 task.bestfunc.com。",
-  "version": "1.0.4",
+  "description": "BestFunc Kanban 任务管理系统 MCP 接入：远程 MCP（85+ 工具）+ 本地文件传输 MCP。支持 Claude Code / Qwen Code，安装后自动连接 task.bestfunc.com。",
+  "version": "1.0.5",
   "author": {
     "name": "Bestfunc Technology",
     "email": "Great@bestfunc.com"
